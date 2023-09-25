@@ -14,6 +14,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping(value = "/category")
+@CrossOrigin("http://localhost:3000")
 public class CategoryController {
 
     private final CategoryService categoryService;

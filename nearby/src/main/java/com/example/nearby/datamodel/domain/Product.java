@@ -1,5 +1,6 @@
 package com.example.nearby.datamodel.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Pattern;
 
@@ -23,6 +24,7 @@ public class Product {
     @JoinColumn(name = "category_id")
     private Category category;
     @OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
+    @JsonIgnore
     private List<PriceHistory> priceHistoryList;
 
     public Long getProductId() {
